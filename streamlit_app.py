@@ -1,12 +1,3 @@
-# Recreate project directory and rewrite updated streamlit app
-import os
-
-project_dir = "/mnt/data/TelcoChurnStreamlitProject"
-os.makedirs(project_dir, exist_ok=True)
-
-streamlit_path = f"{project_dir}/streamlit_app.py"
-
-streamlit_app_cleaned = '''
 import streamlit as st
 import joblib
 import pandas as pd
@@ -19,7 +10,7 @@ st.set_page_config(page_title="Telco Churn Predictor", layout="centered")
 st.title("📊 Telco Customer Churn Prediction")
 st.markdown("This app predicts if a customer is likely to churn based on their demographic and service details.")
 
-# 1. Raw User Inputs
+# User Inputs
 gender = st.selectbox("Gender", ["Male", "Female"])
 senior_citizen = st.selectbox("Senior Citizen?", ["No", "Yes"])
 partner = st.selectbox("Has Partner?", ["No", "Yes"])
@@ -42,7 +33,7 @@ payment_method = st.selectbox("Payment Method", [
 monthly_charges = st.number_input("Monthly Charges", min_value=0.0)
 total_charges = st.number_input("Total Charges", min_value=0.0)
 
-# 2. Create DataFrame
+# Create DataFrame
 raw_input = {
     'gender': gender,
     'SeniorCitizen': 1 if senior_citizen == "Yes" else 0,
@@ -66,20 +57,14 @@ raw_input = {
 }
 input_df = pd.DataFrame([raw_input])
 
-# 3. One-hot encode + align with training features
+# One-hot encode and align
 input_encoded = pd.get_dummies(input_df)
 input_encoded = input_encoded.reindex(columns=features, fill_value=0)
 
-# 4. Predict
+# Prediction
 if st.button("Predict Churn"):
     prediction = model.predict(input_encoded)[0]
     probability = model.predict_proba(input_encoded)[0][1]
     st.success(f"Prediction: {'Churn' if prediction == 1 else 'No Churn'}")
     st.info(f"Churn Probability: {probability:.2f}")
-'''
 
-# Write the improved streamlit app
-with open(streamlit_path, "w") as f:
-    f.write(streamlit_app_cleaned)
-
-streamlit_path
