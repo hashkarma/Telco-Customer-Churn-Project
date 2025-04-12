@@ -7,7 +7,7 @@ model = joblib.load("rf_churn_model.pkl")
 features = joblib.load("model_features.pkl")
 
 st.set_page_config(page_title="Telco Churn Predictor", layout="centered")
-st.title("📊 Telco Customer Churn Prediction")
+st.title("Telco Customer Churn Prediction")
 st.markdown("This app predicts if a customer is likely to churn based on their demographic and service details.")
 
 # User Inputs

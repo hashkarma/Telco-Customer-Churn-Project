@@ -74,10 +74,4 @@ These insights can directly inform customer retention campaigns.
 
 ## 8. Conclusion and Future Work
 
-This project successfully demonstrates how machine learning can be applied to solve a real-world business problem. The integration with Streamlit enhances accessibility and interactivity for end users. Future enhancements could include:
-
-- Incorporating SHAP for model explainability
-- Implementing cost-sensitive learning to address business costs of false positives
-- Expanding to multi-class churn risk levels
-
-Overall, the project offers a strong foundation for data-driven customer management in the telecom industry.
+This project successfully demonstrates how machine learning can be applied to solve a real-world business problem. The integration with Streamlit enhances accessibility and interactivity for end users. Overall, the project offers a strong foundation for data-driven customer management in the telecom industry.

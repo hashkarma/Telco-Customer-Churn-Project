@@ -1,13 +1,13 @@
 # Write the project report in Markdown
 report_content = """
-# 📊 Telco Customer Churn Prediction – Project Report
+# Telco Customer Churn Prediction – Project Report
 
-## 🧠 Problem Statement
+## Problem Statement
 To predict customer churn in a telecom company using customer demographic and service usage data.
 
 ---
 
-## 📦 Dataset Description
+## Dataset Description
 - **Source**: [Kaggle - Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 - **Rows**: 7043
 - **Target**: `Churn` (Yes/No)
@@ -15,7 +15,7 @@ To predict customer churn in a telecom company using customer demographic and se
 
 ---
 
-## 🔧 Methodology
+## Methodology
 
 ### 1. Preprocessing
 - Dropped `customerID`
@@ -30,7 +30,7 @@ To predict customer churn in a telecom company using customer demographic and se
 
 ---
 
-## 📈 Results
+## Results
 
 | Metric       | Score   |
 |--------------|---------|
@@ -42,20 +42,20 @@ To predict customer churn in a telecom company using customer demographic and se
 
 ---
 
-## 💬 Discussion
+## Discussion
 - Random Forest performed well with minimal tuning.
 - Class imbalance was manageable due to stratified split.
 - Feature encoding had a large impact on model accuracy.
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 - A simple Random Forest model provides solid performance for churn prediction.
 - This model can assist telecom companies in customer retention strategies.
 
 ---
 
-## 🖥️ Streamlit App
+## Streamlit App
 A user-friendly interface was built with **Streamlit** to allow business users to input customer data and receive churn predictions in real time.
 
 Run it using:
